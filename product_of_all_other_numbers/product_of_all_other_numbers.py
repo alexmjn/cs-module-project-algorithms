@@ -1,11 +1,16 @@
+from functools import reduce
+
 '''
 Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
-
-    pass
+    #naivesolution
+    new_arr = []
+    for i in range(len(arr)):
+        product = reduce(lambda x, y: x*y, arr)/arr[i]
+        new_arr.append(product)
+    return new_arr
 
 
 if __name__ == '__main__':
